@@ -7,7 +7,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Simple brute force implementation
+ * Implementation of Symptom Exporter, sorts and exports symptoms to file
+ * 
+ * @see ISymptomExporter
  *
  */
 public class SymptomExportDataToFile implements ISymptomExporter {
@@ -17,6 +19,7 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	/**
 	 * 
 	 * @param filepath a full or partial path to file to export symptoms counts
+	 * 
 	 */
 	public SymptomExportDataToFile(String filepath) {
 		this.exportFilePath = filepath;
@@ -25,7 +28,9 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	/**
 	 * sort results and export to file
 	 * 
-	 * @param symptomsCountMap
+	 * @param symptomsMap (String symptom : Integer count)
+	 * 
+	 * @see ISymptomExporter#exportSymptoms
 	 */
 	@Override
 	public boolean exportSymptoms(Map<String, Integer> symptomsMap) {

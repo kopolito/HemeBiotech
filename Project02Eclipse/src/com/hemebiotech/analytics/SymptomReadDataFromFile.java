@@ -8,7 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Simple brute force implementation
+ * Implementation of Symptom Reader, reads and count symptoms to HashMap
+ * 
+ * @see ISymptomReader
  *
  */
 public class SymptomReadDataFromFile implements ISymptomReader {
@@ -27,9 +29,11 @@ public class SymptomReadDataFromFile implements ISymptomReader {
 	/**
 	 * open file with filepath, read and count symptoms lines
 	 * 
-	 * @return Map<String symptom, Integer count> : map of all Symptoms counts obtained from a data
-	 *         source
-	 *         empty result if file not found
+	 * @return symptomsMap (String symptom : Integer count) : map of all Symptoms counts obtained from a
+	 *         data
+	 *         source, empty map if file not found
+	 * 
+	 * @see ISymptomReader#getSymptoms
 	 */
 	@Override
 	public Map<String, Integer> getSymptoms() {

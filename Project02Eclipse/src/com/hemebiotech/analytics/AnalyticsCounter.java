@@ -7,9 +7,9 @@ public class AnalyticsCounter {
 	/**
 	 * The application's entry point
 	 *
-	 * @param symptom file's path
+	 * @param args : symptom file's path
 	 */
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[]) {
 		// first argument may contains custom symptom file's path
 		if (args.length > 0) {
 			readCountExportSymptoms(args[0]);
@@ -20,6 +20,9 @@ public class AnalyticsCounter {
 
 	/**
 	 * read and count symptoms from file, then export result to file
+	 * 
+	 * @see SymptomReadDataFromFile
+	 * @see SymptomExportDataToFile
 	 */
 	private static void readCountExportSymptoms(String symptomsFilePath) {
 		// read and count from file
