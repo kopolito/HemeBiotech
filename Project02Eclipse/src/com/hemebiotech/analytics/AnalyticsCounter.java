@@ -32,7 +32,7 @@ public class AnalyticsCounter {
 		if (symptomsMap.size() == 0) {
 			System.out.println("No symptom was imported.");
 		} else {
-			final String exportFilePath = "symptoms.out";
+			final String exportFilePath = "results.out";
 
 			final SymptomExportDataToFile symptomExporter = new SymptomExportDataToFile(exportFilePath);
 			final boolean success = symptomExporter.exportSymptoms(symptomsMap);
