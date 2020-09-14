@@ -1,11 +1,9 @@
 package com.hemebiotech.analytics;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.TreeMap;
 
 /**
@@ -31,21 +29,6 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	 */
 	@Override
 	public boolean exportSymptoms(Map<String, Integer> symptomsMap) {
-		// check export file exists
-		if ((new File(this.exportFilePath).exists())) {
-			// Ask if user wants to overwrite the export file
-			Scanner input = new Scanner(System.in);
-			String answer;
-			do {
-				System.out.print("File exists, do you wish to overwrite " + this.exportFilePath + "? (Y/N): ");
-				answer = input.next().trim().toUpperCase();
-			} while (!answer.matches("[YN]"));
-			input.close();
-			if (answer.toUpperCase().equalsIgnoreCase("N")) {
-				// abort
-				return false;
-			}
-		}
 		// sort symptoms
 		Map<String, Integer> sortedSymptomsMap = new TreeMap<String, Integer>(symptomsMap);
 		// write to file
