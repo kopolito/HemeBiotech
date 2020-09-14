@@ -1,4 +1,4 @@
 # Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application
 
-version `0.2.1`
+version `0.2.2`
 
