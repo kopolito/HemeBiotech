@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,11 +33,12 @@ public class AnalyticsCounter {
 	private static void readCountExportSymptoms(String symptomsFilePath) {
 		// read and count from file
 		final SymptomReadDataFromFile symptomReader = new SymptomReadDataFromFile(symptomsFilePath);
-		final Map<String, Integer> symptomsMap = symptomReader.getSymptoms();
+		final List<String> symptomsList = symptomReader.getSymptoms();
 		// export to file
-		if (symptomsMap.size() == 0) {
+		if (symptomsList.size() == 0) {
 			System.out.println("No symptom was imported.");
 		} else {
+			final Map<String, Integer> symptomsMap = (new SymptomCounter()).symptomCountFromList(symptomsList);
 			final String exportFilePath = "results.out";
 
 			final SymptomExportDataToFile symptomExporter = new SymptomExportDataToFile(exportFilePath);
