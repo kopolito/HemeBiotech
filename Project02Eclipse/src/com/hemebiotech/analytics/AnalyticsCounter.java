@@ -31,16 +31,17 @@ public class AnalyticsCounter {
 	 * @see SymptomExportDataToFile
 	 */
 	private static void readCountExportSymptoms(String symptomsFilePath) {
-		// read and count from file
+		// read from file
 		final SymptomReadDataFromFile symptomReader = new SymptomReadDataFromFile(symptomsFilePath);
 		final List<String> symptomsList = symptomReader.getSymptoms();
-		// export to file
+
 		if (symptomsList.size() == 0) {
 			System.out.println("No symptom was imported.");
 		} else {
-			final Map<String, Integer> symptomsMap = (new SymptomCounter()).symptomCountFromList(symptomsList);
+			// count symptoms
+			final Map<String, Integer> symptomsMap = (new SymptomCount()).symptomCountFromList(symptomsList);
+			// export to file
 			final String exportFilePath = "results.out";
-
 			final SymptomExportDataToFile symptomExporter = new SymptomExportDataToFile(exportFilePath);
 			final boolean success = symptomExporter.exportSymptoms(symptomsMap);
 			if (!success) {

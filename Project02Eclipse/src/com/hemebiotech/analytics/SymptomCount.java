@@ -10,13 +10,13 @@ import java.util.Map;
  * @see ISymptomReader
  *
  */
-public class SymptomCounter implements ISymptomCounter {
+public class SymptomCount implements ISymptomCounter {
 
 	/**
 	 * 
 	 * Symptom counter
 	 */
-	public SymptomCounter() {
+	public SymptomCount() {
 
 	}
 
@@ -27,7 +27,7 @@ public class SymptomCounter implements ISymptomCounter {
 	 * 
 	 * @return Map(String symptom, Integer count) : map of all Symptoms counts obtained from list
 	 * 
-	 * @see ISymptomCounter#countSymptoms
+	 * @see ISymptomCounter#symptomCountFromList
 	 */
 	@Override
 	public Map<String, Integer> symptomCountFromList(List<String> symptomsList) {
