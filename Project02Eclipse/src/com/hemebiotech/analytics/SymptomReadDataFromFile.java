@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Implementation of Symptom Reader, reads and count symptoms to HashMap
+ * Implementation of Symptom Reader, reads symptoms to List
  * 
  * @see ISymptomReader
  *
@@ -29,15 +29,16 @@ public class SymptomReadDataFromFile implements ISymptomReader {
 	/**
 	 * open file with filepath, read and count symptoms lines
 	 * 
-	 * @return symptomsMap (String symptom : Integer count) : map of all Symptoms counts obtained from a
-	 *         data
-	 *         source, empty map if file not found
+	 * If no data is available, return an emptyList
+	 * 
+	 * @return List(String symptom) : list of all Symptoms obtained from a data
+	 *         source
 	 * 
 	 * @see ISymptomReader#getSymptoms
 	 */
 	@Override
-	public Map<String, Integer> getSymptoms() {
-		final Map<String, Integer> symptomsMap = new HashMap<String, Integer>();
+	public List<String> getSymptoms() {
+		final List<String> symptomsList = new ArrayList<String>();
 
 		if (filepath != null) {
 			try {
@@ -46,12 +47,7 @@ public class SymptomReadDataFromFile implements ISymptomReader {
 				String symptomLine = reader.readLine();
 
 				while (symptomLine != null) {
-					symptomLine = symptomLine.trim();
-					if (symptomsMap.containsKey(symptomLine)) {
-						symptomsMap.put(symptomLine, symptomsMap.get(symptomLine) + 1);
-					} else {
-						symptomsMap.put(symptomLine, 1);
-					}
+					symptomsList.add(symptomLine);
 					symptomLine = reader.readLine();
 				}
 				reader.close();
@@ -65,7 +61,7 @@ public class SymptomReadDataFromFile implements ISymptomReader {
 			}
 		}
 
-		return symptomsMap;
+		return symptomsList;
 	}
 
 }
