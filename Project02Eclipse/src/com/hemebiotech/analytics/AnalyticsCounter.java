@@ -2,6 +2,10 @@ package com.hemebiotech.analytics;
 
 import java.util.Map;
 
+/**
+ * Reads, counts and exports symptoms trend analysis
+ *
+ */
 public class AnalyticsCounter {
 
 	/**
@@ -21,6 +25,7 @@ public class AnalyticsCounter {
 	/**
 	 * read and count symptoms from file, then export result to file
 	 * 
+	 * @param symptomsFilePath : a full or partial path to file with symptom strings in it, one per line
 	 * @see SymptomReadDataFromFile
 	 * @see SymptomExportDataToFile
 	 */
