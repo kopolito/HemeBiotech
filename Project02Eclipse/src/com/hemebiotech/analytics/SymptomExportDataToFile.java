@@ -4,7 +4,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Implementation of Symptom Exporter, sorts and exports symptoms to file
@@ -34,19 +33,18 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	 */
 	@Override
 	public boolean exportSymptoms(Map<String, Integer> symptomsMap) {
-		// sort symptoms
-		Map<String, Integer> sortedSymptomsMap = new TreeMap<String, Integer>(symptomsMap);
 		// write to file
 		try {
 			FileWriter writer = new FileWriter(this.exportFilePath);
 			// write symptoms counts
 			String symptom;
 			int count;
-			Iterator<String> iterator = sortedSymptomsMap.keySet().iterator();
+			Iterator<String> iterator = symptomsMap.keySet().iterator();
 			while (iterator.hasNext()) {
 				symptom = iterator.next();
-				count = sortedSymptomsMap.get(symptom);
+				count = symptomsMap.get(symptom);
 				writer.write(symptom + ": " + count + "\n");
+				System.out.println(symptom + ": " + count);
 			}
 			writer.close();
 
