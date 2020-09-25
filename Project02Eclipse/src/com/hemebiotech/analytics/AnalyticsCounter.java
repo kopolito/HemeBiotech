@@ -34,12 +34,13 @@ public class AnalyticsCounter {
 		// read from file
 		final SymptomReadDataFromFile symptomReader = new SymptomReadDataFromFile(symptomsFilePath);
 		final List<String> symptomsList = symptomReader.getSymptoms();
-
-		if (symptomsList.size() == 0) {
+		if (symptomsList.isEmpty()) {
 			System.out.println("No symptom was imported.");
 		} else {
 			// count symptoms
-			final Map<String, Integer> symptomsMap = (new SymptomCount()).symptomCountFromList(symptomsList);
+			Map<String, Integer> symptomsMap = (new SymptomCountWithStream()).symptomCountFromList(symptomsList);
+			// sort symptoms
+			symptomsMap = (new SymptomSortWithStream()).sortSymptoms(symptomsMap);
 			// export to file
 			final String exportFilePath = "results.out";
 			final SymptomExportDataToFile symptomExporter = new SymptomExportDataToFile(exportFilePath);
