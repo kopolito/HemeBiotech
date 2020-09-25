@@ -17,32 +17,35 @@ public class AnalyticsCounter {
 	public static void main(String args[]) {
 		// first argument may contains custom symptom file's path
 		if (args.length > 0) {
-			readCountExportSymptoms(args[0]);
+			readCountSortExportSymptoms(args[0]);
 		} else {
-			readCountExportSymptoms("symptoms.txt");
+			readCountSortExportSymptoms("symptoms.txt");
 		}
 	}
 
 	/**
-	 * read and count symptoms from file, then export result to file
+	 * read symptoms from file, count, sort then export result to file
 	 * 
 	 * @param symptomsFilePath : a full or partial path to file with symptom strings in it, one per line
-	 * @see SymptomReadDataFromFile
-	 * @see SymptomExportDataToFile
+	 * @see SymptomReadDataFromFile#getSymptoms
+	 * @see SymptomCountWithStream#symptomCountFromList
+	 * @see SymptomSortWithStream#sortSymptoms
+	 * @see SymptomExportDataToFile#exportSymptoms
 	 */
-	private static void readCountExportSymptoms(String symptomsFilePath) {
+	private static void readCountSortExportSymptoms(String symptomsFilePath) {
 		// read from file
-		final SymptomReadDataFromFile symptomReader = new SymptomReadDataFromFile(symptomsFilePath);
+		final ISymptomReader symptomReader = new SymptomReadDataFromFile(symptomsFilePath);
 		final List<String> symptomsList = symptomReader.getSymptoms();
-
-		if (symptomsList.size() == 0) {
+		if (symptomsList.isEmpty()) {
 			System.out.println("No symptom was imported.");
 		} else {
 			// count symptoms
-			final Map<String, Integer> symptomsMap = (new SymptomCount()).symptomCountFromList(symptomsList);
+			Map<String, Integer> symptomsMap = (new SymptomCountWithStream()).symptomCountFromList(symptomsList);
+			// sort symptoms
+			symptomsMap = (new SymptomSortWithStream()).sortSymptoms(symptomsMap);
 			// export to file
 			final String exportFilePath = "results.out";
-			final SymptomExportDataToFile symptomExporter = new SymptomExportDataToFile(exportFilePath);
+			final ISymptomExporter symptomExporter = new SymptomExportDataToFile(exportFilePath);
 			final boolean success = symptomExporter.exportSymptoms(symptomsMap);
 			if (!success) {
 				System.out.println("Result not exported to file");
