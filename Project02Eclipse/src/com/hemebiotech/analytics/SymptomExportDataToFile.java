@@ -57,7 +57,7 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 			return false;
 
 		} catch (NullPointerException e) {
-			System.out.println("Specified symptoms colelction is null");
+			System.out.println("Specified symptoms collection is null");
 			return false;
 		}
 		// success

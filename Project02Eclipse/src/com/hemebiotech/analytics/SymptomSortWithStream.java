@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * Implementation of Symptom Sorter
+ * Implementation of Symptom Sorter, using a stream
  * 
  * @see ISymptomSorter
  *
