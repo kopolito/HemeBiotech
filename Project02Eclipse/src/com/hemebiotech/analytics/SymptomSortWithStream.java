@@ -16,10 +16,10 @@ public class SymptomSortWithStream implements ISymptomSorter {
 	 * 
 	 * Sorts symptoms map using a stream
 	 * 
-	 * @param Map(String symptom, Integer count) : map of all Symptoms counts
+	 * @param symptomsMap Map(String symptom, Integer count) : map of all Symptoms counts
 	 * @return Map(String symptom, Integer count) :sorted Map Symptom counts
 	 * 
-	 * @see ISymptomCounter#sortSymptoms
+	 * @see ISymptomSorter#sortSymptoms
 	 */
 	@Override
 	public Map<String, Integer> sortSymptoms(Map<String, Integer> symptomsMap) {
