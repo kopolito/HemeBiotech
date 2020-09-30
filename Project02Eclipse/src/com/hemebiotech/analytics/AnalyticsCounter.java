@@ -40,7 +40,7 @@ public class AnalyticsCounter {
 			System.out.println("No symptom was imported.");
 		} else {
 			// count symptoms
-			Map<String, Integer> symptomsMap = (new SymptomCountWithStream()).symptomCountFromList(symptomsList);
+			Map<String, Long> symptomsMap = (new SymptomCountWithStream()).symptomCountFromList(symptomsList);
 			// sort symptoms
 			symptomsMap = (new SymptomSortWithStream()).sortSymptoms(symptomsMap);
 			// export to file

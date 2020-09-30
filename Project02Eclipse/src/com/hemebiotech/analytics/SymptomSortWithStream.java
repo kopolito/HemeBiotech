@@ -22,7 +22,7 @@ public class SymptomSortWithStream implements ISymptomSorter {
 	 * @see ISymptomSorter#sortSymptoms
 	 */
 	@Override
-	public Map<String, Integer> sortSymptoms(Map<String, Integer> symptomsMap) {
+	public Map<String, Long> sortSymptoms(Map<String, Long> symptomsMap) {
 
 		return symptomsMap.entrySet().stream()
 				.sorted(Map.Entry.comparingByKey())

@@ -32,13 +32,13 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	 * @see ISymptomExporter#exportSymptoms
 	 */
 	@Override
-	public boolean exportSymptoms(Map<String, Integer> symptomsMap) {
+	public boolean exportSymptoms(Map<String, Long> symptomsMap) {
 		// write to file
 		try {
 			FileWriter writer = new FileWriter(this.exportFilePath);
 			// write symptoms counts
 			String symptom;
-			int count;
+			long count;
 			Iterator<String> iterator = symptomsMap.keySet().iterator();
 			while (iterator.hasNext()) {
 				symptom = iterator.next();

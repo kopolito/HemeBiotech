@@ -14,6 +14,6 @@ public interface ISymptomSorter {
 	 *         source
 	 */
 
-	public Map<String, Integer> sortSymptoms(Map<String, Integer> symptomsMap);
+	public Map<String, Long> sortSymptoms(Map<String, Long> symptomsMap);
 
 }

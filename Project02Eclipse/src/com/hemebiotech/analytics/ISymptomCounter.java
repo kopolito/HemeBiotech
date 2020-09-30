@@ -15,5 +15,5 @@ public interface ISymptomCounter {
 	 * @param symptomsList : list of all Symptoms
 	 * @return Map(String symptom, Integer count) : map of Symptoms counts obtained from the List
 	 */
-	Map<String, Integer> symptomCountFromList(List<String> symptomsList);
+	Map<String, Long> symptomCountFromList(List<String> symptomsList);
 }

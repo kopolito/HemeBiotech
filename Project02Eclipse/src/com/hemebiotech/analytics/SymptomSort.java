@@ -21,9 +21,9 @@ public class SymptomSort implements ISymptomSorter {
 	 * @see ISymptomSorter#sortSymptoms
 	 */
 	@Override
-	public Map<String, Integer> sortSymptoms(Map<String, Integer> symptomsMap) {
+	public Map<String, Long> sortSymptoms(Map<String, Long> symptomsMap) {
 
-		return new TreeMap<String, Integer>(symptomsMap);
+		return new TreeMap<String, Long>(symptomsMap);
 	}
 
 }

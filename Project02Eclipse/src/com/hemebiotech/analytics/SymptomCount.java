@@ -30,8 +30,8 @@ public class SymptomCount implements ISymptomCounter {
 	 * @see ISymptomCounter#symptomCountFromList
 	 */
 	@Override
-	public Map<String, Integer> symptomCountFromList(List<String> symptomsList) {
-		final Map<String, Integer> symptomsMap = new HashMap<String, Integer>();
+	public Map<String, Long> symptomCountFromList(List<String> symptomsList) {
+		final Map<String, Long> symptomsMap = new HashMap<String, Long>();
 		if (symptomsList == null || symptomsList.isEmpty()) {
 			System.out.println("Empty or Null List provided toi SymptomCounter !");
 			return symptomsMap;
@@ -40,7 +40,7 @@ public class SymptomCount implements ISymptomCounter {
 			if (symptomsMap.containsKey(symptom)) {
 				symptomsMap.put(symptom, symptomsMap.get(symptom) + 1);
 			} else {
-				symptomsMap.put(symptom, 1);
+				symptomsMap.put(symptom, (long) 1);
 			}
 		}
 		return symptomsMap;

@@ -14,5 +14,5 @@ public interface ISymptomExporter {
 	 * @return boolean for successful export
 	 * @see SymptomExportDataToFile#exportSymptoms
 	 */
-	boolean exportSymptoms(Map<String, Integer> symptomsMap);
+	boolean exportSymptoms(Map<String, Long> symptomsMap);
 }
