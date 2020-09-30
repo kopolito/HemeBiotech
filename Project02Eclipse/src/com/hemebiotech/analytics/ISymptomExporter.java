@@ -10,9 +10,9 @@ import java.util.Map;
 public interface ISymptomExporter {
 	/**
 	 * 
-	 * @param symptomsMap (String symptom : Integer count)
+	 * @param symptomsMap (String symptom : Long count)
 	 * @return boolean for successful export
 	 * @see SymptomExportDataToFile#exportSymptoms
 	 */
-	boolean exportSymptoms(Map<String, Integer> symptomsMap);
+	boolean exportSymptoms(Map<String, Long> symptomsMap);
 }

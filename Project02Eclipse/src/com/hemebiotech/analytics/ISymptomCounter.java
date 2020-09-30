@@ -13,7 +13,7 @@ public interface ISymptomCounter {
 	 * If no data is available, return an emptyMap
 	 * 
 	 * @param symptomsList : list of all Symptoms
-	 * @return Map(String symptom, Integer count) : map of Symptoms counts obtained from the List
+	 * @return Map(String symptom, Long count) : map of Symptoms counts obtained from the List
 	 */
-	Map<String, Integer> symptomCountFromList(List<String> symptomsList);
+	Map<String, Long> symptomCountFromList(List<String> symptomsList);
 }

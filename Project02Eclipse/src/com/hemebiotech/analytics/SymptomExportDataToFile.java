@@ -27,18 +27,18 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	/**
 	 * sort results and export to file
 	 * 
-	 * @param symptomsMap (String symptom : Integer count)
+	 * @param symptomsMap (String symptom : Long count)
 	 * 
 	 * @see ISymptomExporter#exportSymptoms
 	 */
 	@Override
-	public boolean exportSymptoms(Map<String, Integer> symptomsMap) {
+	public boolean exportSymptoms(Map<String, Long> symptomsMap) {
 		// write to file
 		try {
 			FileWriter writer = new FileWriter(this.exportFilePath);
 			// write symptoms counts
 			String symptom;
-			int count;
+			long count;
 			Iterator<String> iterator = symptomsMap.keySet().iterator();
 			while (iterator.hasNext()) {
 				symptom = iterator.next();
