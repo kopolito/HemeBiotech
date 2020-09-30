@@ -9,6 +9,7 @@ public interface ISymptomSorter {
 	/**
 	 * If no data is available, return an emptyMap
 	 * 
+	 * @param symptomsMap Map(String symptom, Integer count) : map of all Symptoms counts
 	 * @return Map(String symptom, Integer count) :sorted Map Symptom counts
 	 *         source
 	 */
