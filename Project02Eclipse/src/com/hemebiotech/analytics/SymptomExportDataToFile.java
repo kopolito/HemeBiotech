@@ -33,10 +33,8 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	 */
 	@Override
 	public boolean exportSymptoms(Map<String, Long> symptomsMap) {
-		// write to file
 		try {
 			FileWriter writer = new FileWriter(this.exportFilePath);
-			// write symptoms counts
 			String symptom;
 			long count;
 			Iterator<String> iterator = symptomsMap.keySet().iterator();
@@ -60,8 +58,6 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 			System.out.println("Specified symptoms collection is null");
 			return false;
 		}
-		// success
 		return true;
 	}
-
 }
