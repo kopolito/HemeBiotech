@@ -27,7 +27,7 @@ public class SymptomExportDataToFile implements ISymptomExporter {
 	/**
 	 * sort results and export to file
 	 * 
-	 * @param symptomsMap (String symptom : Integer count)
+	 * @param symptomsMap (String symptom : Long count)
 	 * 
 	 * @see ISymptomExporter#exportSymptoms
 	 */

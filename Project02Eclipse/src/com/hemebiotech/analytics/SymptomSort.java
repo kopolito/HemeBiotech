@@ -15,8 +15,8 @@ public class SymptomSort implements ISymptomSorter {
 	 * 
 	 * Sorts symptoms map using TreeMap
 	 * 
-	 * @param symptomsMap Map(String symptom, Integer count) : map of all Symptoms counts
-	 * @return Map(String symptom, Integer count) :sorted Map Symptom counts
+	 * @param symptomsMap Map(String symptom, Long count) : map of all Symptoms counts
+	 * @return Map(String symptom, Long count) :sorted Map Symptom counts
 	 * 
 	 * @see ISymptomSorter#sortSymptoms
 	 */

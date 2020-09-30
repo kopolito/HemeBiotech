@@ -16,8 +16,8 @@ public class SymptomSortWithStream implements ISymptomSorter {
 	 * 
 	 * Sorts symptoms map using a stream
 	 * 
-	 * @param symptomsMap Map(String symptom, Integer count) : map of all Symptoms counts
-	 * @return Map(String symptom, Integer count) :sorted Map Symptom counts
+	 * @param symptomsMap Map(String symptom, Long count) : map of all Symptoms counts
+	 * @return Map(String symptom, Long count) :sorted Map Symptom counts
 	 * 
 	 * @see ISymptomSorter#sortSymptoms
 	 */

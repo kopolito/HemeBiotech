@@ -25,7 +25,7 @@ public class SymptomCount implements ISymptomCounter {
 	 * 
 	 * If no data is available, return an empty Map
 	 * 
-	 * @return Map(String symptom, Integer count) : map of all Symptoms counts obtained from list
+	 * @return Map(String symptom, Long count) : map of all Symptoms counts obtained from list
 	 * 
 	 * @see ISymptomCounter#symptomCountFromList
 	 */
